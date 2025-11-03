@@ -1,2 +1,2 @@
 # personalsite
-Personal website for my contact infromation and resume.
+Personal website for my contact infromation and projects.
