@@ -1,15 +1,13 @@
-import Background from "./components/Background"
-import CentralPanel from "./components/CentralPanel"
+import Background from "./components/Background";
+import PanelManager from "./components/PanelManager";
 
-function App() {
+const App = () => (
+  <div className="relative h-dvh overflow-hidden text-white flex items-center justify-center">
+    <Background />
+    <main className="relative z-10 flex justify-center w-full">
+      <PanelManager />
+    </main>
+  </div>
+);
 
-  return (
-    <div className="relative h-full overflow-hidden text-white">
-      <Background />
-
-      <CentralPanel />
-    </div>
-  )
-}
-
-export default App
+export default App;

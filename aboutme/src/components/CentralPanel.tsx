@@ -1,13 +1,35 @@
-function CentralPanel() {
+import React from "react";
+import Slide from "./Slide";
 
-    return (
-      <>
-        <main className="relative z-10 flex items-center justify-center h-full">
-        <h1 className="text-4xl font-semibold">Hello World</h1>
-      </main>
-      </>
-    )
-  }
-  
-  export default CentralPanel
-  
+interface CentralPanelProps {
+  children?: React.ReactNode;
+}
+
+const CentralPanel: React.FC<CentralPanelProps> = ({ children }) => {
+  return (
+    <div
+      className="
+        relative 
+        w-[90%] sm:w-3/4 md:w-1/2 
+        mx-auto 
+        rounded-3xl
+        p-6 sm:p-8
+        backdrop-blur-xl 
+        bg-white/10 
+        border border-white/20 
+        shadow-2xl 
+        text-white 
+        transition-all
+        duration-500
+      "
+    >
+      {children ?? (
+        <div className="text-center text-lg font-medium opacity-90">
+          <Slide></Slide>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default CentralPanel;
