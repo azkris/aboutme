@@ -10,7 +10,7 @@ const CentralPanel: React.FC<CentralPanelProps> = ({ children }) => {
     <div
       className="
         relative 
-        w-[90%] sm:w-3/4 md:w-1/2 
+        w-[90%] sm:w-3/4 
         mx-auto 
         rounded-3xl
         p-6 sm:p-8
