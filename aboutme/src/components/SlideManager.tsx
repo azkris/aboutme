@@ -79,46 +79,51 @@ const SlideManager: React.FC = () => {
   }, [handleKeyDown]);
 
   return (
-    <div className="relative w-full h-[50vh] flex justify-center items-center mb-4 bg-transparent rounded-xl overflow-hidden">
-      {/* Render the current slide */}
+  <div className="relative w-full h-[50vh] flex flex-col items-center justify-between bg-transparent rounded-xl overflow-hidden">
+    {/* Top Edge Button (Prev Topic) */}
+    <button
+      onClick={prevTopic}
+      className="absolute top-4 left-0 right-0 mx-auto w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
+    >
+      ↑
+    </button>
+
+    {/* Topic Title */}
+    <h2 className="text-xl font-semibold text-white mt-4 opacity-90">
+      {currentTopic.title}
+    </h2>
+
+    {/* Centered Slide Content */}
+    <div className="flex-grow flex justify-center items-center mb-8">
       <Slide title={currentSlide} />
-
-      {/* On-Screen Navigation Buttons */}
-      <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-between items-center px-6 py-4">
-        {/* Left edge button (Prev Topic) */}
-        <button
-          onClick={prevTopic}
-          className="w-1/3 h-full bg-white/10 text-white text-center rounded-lg hover:bg-white/20 transition-all duration-200 focus:outline-none"
-        >
-          ↑ Topic
-        </button>
-
-        {/* Center buttons for slides */}
-        <div className="flex space-x-2">
-          <button
-            onClick={prevSlide}
-            className="px-3 py-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-200 focus:outline-none"
-          >
-            ←
-          </button>
-          <button
-            onClick={nextSlide}
-            className="px-3 py-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-all duration-200 focus:outline-none"
-          >
-            →
-          </button>
-        </div>
-
-        {/* Right edge button (Next Topic) */}
-        <button
-          onClick={nextTopic}
-          className="w-1/3 h-full bg-white/10 text-white text-center rounded-lg hover:bg-white/20 transition-all duration-200 focus:outline-none"
-        >
-          ↓ Topic
-        </button>
-      </div>
     </div>
-  );
+
+    {/* Bottom Edge Button (Next Topic) */}
+    <button
+      onClick={nextTopic}
+      className="absolute bottom-4 left-0 right-0 mx-auto w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
+    >
+      ↓
+    </button>
+
+    {/* Left Edge Button (Prev Slide) */}
+    <button
+      onClick={prevSlide}
+      className="absolute top-0 bottom-0 left-4 w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
+    >
+      ←
+    </button>
+
+    {/* Right Edge Button (Next Slide) */}
+    <button
+      onClick={nextSlide}
+      className="absolute top-0 bottom-0 right-4 w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
+    >
+      →
+    </button>
+  </div>
+);
+
 };
 
 export default SlideManager;
