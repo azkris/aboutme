@@ -1,11 +1,11 @@
 import React from "react";
-import Slide from "./Slide";
+import SlideManager from "./SlideManager";
 
 interface CentralPanelProps {
   children?: React.ReactNode;
 }
 
-const CentralPanel: React.FC<CentralPanelProps> = ({ children }) => {
+const CentralPanel: React.FC<CentralPanelProps> = () => {
   return (
     <div
       className="
@@ -24,11 +24,7 @@ const CentralPanel: React.FC<CentralPanelProps> = ({ children }) => {
         duration-500
       "
     >
-      {children ?? (
-        <div className="text-center text-lg font-medium opacity-90">
-          <Slide></Slide>
-        </div>
-      )}
+      <SlideManager />
     </div>
   );
 };
