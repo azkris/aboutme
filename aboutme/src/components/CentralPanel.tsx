@@ -12,6 +12,7 @@ const CentralPanel: React.FC<CentralPanelProps> = ({ children }) => {
         relative 
         w-[90%] sm:w-3/4 
         mx-auto 
+        h-[75vh]
         rounded-3xl
         p-6 sm:p-8
         backdrop-blur-xl 
