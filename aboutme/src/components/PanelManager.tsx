@@ -49,15 +49,23 @@ const PanelManager: React.FC = () => {
     (e: KeyboardEvent) => {
       switch (e.key) {
         case "ArrowRight":
+        case "d":
+        case "D":
           nextSlide();
           break;
         case "ArrowLeft":
+        case "a":
+        case "A":
           prevSlide();
           break;
         case "ArrowUp":
+        case "w":
+        case "W":
           prevTopic();
           break;
         case "ArrowDown":
+        case "s":
+        case "S":
           nextTopic();
           break;
       }
