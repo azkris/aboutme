@@ -18,6 +18,7 @@ const CentralPanel: React.FC<CentralPanelProps> = () => {
         border border-white/20 
         shadow-2xl 
         text-white
+        overflow-clip
       "
     >
       <SlideManager/>
