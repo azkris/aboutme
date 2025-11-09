@@ -79,51 +79,58 @@ const SlideManager: React.FC = () => {
   }, [handleKeyDown]);
 
   return (
-  <div className="relative w-full h-[50vh] flex flex-col items-center justify-between bg-transparent rounded-xl overflow-hidden">
-    {/* Top Edge Button (Prev Topic) */}
-    <button
-      onClick={prevTopic}
-      className="absolute top-4 left-0 right-0 mx-auto w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
-    >
-      ↑
-    </button>
+    <div className="relative w-full h-full flex flex-col items-center justify-between bg-transparent rounded-xl overflow-hidden border-4 border-red/30">
+      {/* Top Edge Button (Prev Topic) */}
+      <div className="flex w-full justify-between px-6 py-2 absolute top-0">
+        <button
+          onClick={prevTopic}
+          className="w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
+        >
+          ↑
+        </button>
+      </div>
 
-    {/* Topic Title */}
-    <h2 className="text-xl font-semibold text-white mt-4 opacity-90">
-      {currentTopic.title}
-    </h2>
+      {/* Topic Title */}
+      <h2 className="text-xl font-semibold text-white mt-4 opacity-90">
+        {currentTopic.title}
+      </h2>
 
-    {/* Centered Slide Content */}
-    <div className="flex-grow flex justify-center items-center mb-8">
-      <Slide title={currentSlide} />
+      {/* Centered Slide Content */}
+      <div className="flex-grow flex justify-center items-center mb-8">
+        <Slide title={currentSlide} />
+      </div>
+
+      {/* Bottom Edge Button (Next Topic) */}
+      <div className="flex w-full justify-between px-6 py-2 absolute bottom-0">
+        <button
+          onClick={nextTopic}
+          className="w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
+        >
+          ↓
+        </button>
+      </div>
+
+      {/* Left Edge Button (Prev Slide) */}
+      <div className="flex items-center absolute left-0 top-0 bottom-0 py-6">
+        <button
+          onClick={prevSlide}
+          className="w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
+        >
+          ←
+        </button>
+      </div>
+
+      {/* Right Edge Button (Next Slide) */}
+      <div className="flex items-center absolute right-0 top-0 bottom-0 py-6">
+        <button
+          onClick={nextSlide}
+          className="w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
+        >
+          →
+        </button>
+      </div>
     </div>
-
-    {/* Bottom Edge Button (Next Topic) */}
-    <button
-      onClick={nextTopic}
-      className="absolute bottom-4 left-0 right-0 mx-auto w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
-    >
-      ↓
-    </button>
-
-    {/* Left Edge Button (Prev Slide) */}
-    <button
-      onClick={prevSlide}
-      className="absolute top-0 bottom-0 left-4 w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
-    >
-      ←
-    </button>
-
-    {/* Right Edge Button (Next Slide) */}
-    <button
-      onClick={nextSlide}
-      className="absolute top-0 bottom-0 right-4 w-12 h-12 bg-white/10 text-white text-2xl rounded-full hover:bg-white/20 transition-all duration-300 focus:outline-none flex items-center justify-center"
-    >
-      →
-    </button>
-  </div>
-);
-
+  );
 };
 
 export default SlideManager;
