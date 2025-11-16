@@ -1,14 +1,14 @@
-import React from "react";
+import type React from "react";
 import Slide from "./Slide";
 
 interface CentralPanelProps {
-  children?: React.ReactNode;
+	children?: React.ReactNode;
 }
 
 const CentralPanel: React.FC<CentralPanelProps> = ({ children }) => {
-  return (
-    <div
-      className="
+	return (
+		<div
+			className="
         relative 
         w-[90%] sm:w-3/4 
         mx-auto 
@@ -22,14 +22,14 @@ const CentralPanel: React.FC<CentralPanelProps> = ({ children }) => {
         transition-all
         duration-500
       "
-    >
-      {children ?? (
-        <div className="text-center text-lg font-medium opacity-90">
-          <Slide></Slide>
-        </div>
-      )}
-    </div>
-  );
+		>
+			{children ?? (
+				<div className="text-center text-lg font-medium opacity-90">
+					<Slide></Slide>
+				</div>
+			)}
+		</div>
+	);
 };
 
 export default CentralPanel;
