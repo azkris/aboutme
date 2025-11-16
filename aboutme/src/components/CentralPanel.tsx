@@ -2,13 +2,13 @@ import React from "react";
 import SlideManager from "./SlideManager";
 
 interface CentralPanelProps {
-  children?: React.ReactNode;
+	children?: React.ReactNode;
 }
 
 const CentralPanel: React.FC<CentralPanelProps> = () => {
-  return (
-    <div
-      className="
+	return (
+		<div
+			className="
         w-[90%] sm:w-3/4 
         mx-auto 
         h-[75vh]
@@ -20,10 +20,10 @@ const CentralPanel: React.FC<CentralPanelProps> = () => {
         text-white
         overflow-clip
       "
-    >
-      <SlideManager/>
-    </div>
-  );
+		>
+			<SlideManager />
+		</div>
+	);
 };
 
 export default CentralPanel;
