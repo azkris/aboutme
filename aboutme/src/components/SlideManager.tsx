@@ -1,6 +1,7 @@
 import type React from "react";
 import { useCallback, useEffect, useState } from "react";
 import { topics } from "./topics";
+import { AnimatePresence, motion } from "framer-motion";
 
 const SlideManager: React.FC = () => {
 	const [topicIndex, setTopicIndex] = useState(0);
@@ -10,25 +11,51 @@ const SlideManager: React.FC = () => {
 	const CurrentSlide = currentTopic.slides[slideIndex];
 
 	// --- Navigation handlers ---
+	const [direction, setDirection] = useState<"left" | "right" | "up" | "down">(
+		"right",
+	);
+
 	const nextSlide = useCallback(() => {
+		setDirection("right");
 		setSlideIndex((i) => (i + 1) % currentTopic.slides.length);
 	}, [currentTopic]);
 
 	const prevSlide = useCallback(() => {
+		setDirection("left");
 		setSlideIndex(
 			(i) => (i - 1 + currentTopic.slides.length) % currentTopic.slides.length,
 		);
 	}, [currentTopic]);
 
 	const nextTopic = useCallback(() => {
+		setDirection("down");
 		setTopicIndex((i) => (i + 1) % topics.length);
 		setSlideIndex(0);
 	}, []);
 
 	const prevTopic = useCallback(() => {
+		setDirection("up");
 		setTopicIndex((i) => (i - 1 + topics.length) % topics.length);
 		setSlideIndex(0);
 	}, []);
+
+	const slideVariants = {
+		enter: (direction: "left" | "right" | "up" | "down") => ({
+			x: direction === "left" ? -200 : direction === "right" ? 200 : 0,
+			y: direction === "up" ? -200 : direction === "down" ? 200 : 0,
+			opacity: 0,
+		}),
+		center: {
+			x: 0,
+			y: 0,
+			opacity: 1,
+		},
+		exit: (direction: "left" | "right" | "up" | "down") => ({
+			x: direction === "left" ? 200 : direction === "right" ? -200 : 0,
+			y: direction === "up" ? 200 : direction === "down" ? -200 : 0,
+			opacity: 0,
+		}),
+	};
 
 	// --- Keyboard handling ---
 	const handleKeyDown = useCallback(
@@ -87,7 +114,20 @@ const SlideManager: React.FC = () => {
 				<div className="relative grow flex justify-center items-center w-[800px] h-[400px]">
 					{/* Fixed panel area */}
 					<div className="w-full h-full overflow-hidden rounded-xl">
-						<CurrentSlide />
+						<AnimatePresence mode="wait" custom={direction}>
+							<motion.div
+								key={`${topicIndex}-${slideIndex}`}
+								custom={direction}
+								variants={slideVariants}
+								initial="enter"
+								animate="center"
+								exit="exit"
+								transition={{ duration: 0.25, ease: "easeInOut" }}
+								className="w-full h-full"
+							>
+								<CurrentSlide />
+							</motion.div>
+						</AnimatePresence>
 					</div>
 				</div>
 			</div>

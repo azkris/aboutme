@@ -12,7 +12,7 @@ export interface Topic {
 export const topics: Topic[] = [
 	{
 		title: "Personal Links",
-		slides: [ExampleSlide1],
+		slides: [ExampleSlide1, ExampleSlide1],
 	},
 	{
 		title: "Projects 1",
