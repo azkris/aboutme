@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
-interface SlideProps {
+interface SlideTemplateProps {
 	children: ReactNode;
 }
 
-const Slide = ({ children }: SlideProps) => {
+const SlideTemplate = ({ children }: SlideTemplateProps) => {
 	return (
 		<div
 			className="
@@ -20,4 +20,4 @@ const Slide = ({ children }: SlideProps) => {
 	);
 };
 
-export default Slide;
+export default SlideTemplate;
