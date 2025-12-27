@@ -13,7 +13,7 @@ permissions:
 
 jobs:
   build:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     container:
       image: node:24.11.1-alpine3.22
     steps:
@@ -31,7 +31,7 @@ jobs:
           name: "ghp-react-build"
           path: dist
   deploy:
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     needs: build
     environment:
       name: github-pages
