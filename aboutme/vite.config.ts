@@ -6,6 +6,7 @@ import { defineConfig as defineVitestConfig } from "vitest/config";
 // https://vite.dev/config/
 const viteConfig = defineViteConfig({
 	plugins: [react(), tailwindcss()],
+	base: '/aboutme/',
 });
 
 const vitestConfig = defineVitestConfig({

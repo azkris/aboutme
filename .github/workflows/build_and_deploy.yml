@@ -1,0 +1,44 @@
+name: Build and deploy
+
+on:
+  push:
+    branches:
+      - gh-pages
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-slim
+    container:
+      image: node:24.11.1-alpine3.22
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build static site
+        run: |
+          npm ci
+          npm run build
+
+      - name: Upload build Output/Artifacts
+        uses: actions/upload-pages-artifact@v4
+        with:
+          name: "ghp-react-build"
+          path: dist
+  deploy:
+    runs-on: ubuntu-slim
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GH Pages
+        uses: actions/deploy-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          artifact_name: "ghp-react-build"
