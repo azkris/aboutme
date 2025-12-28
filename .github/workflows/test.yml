@@ -9,14 +9,21 @@ on:
       - gh-pages
   workflow_dispatch:
 
+defaults:
+  run:
+    working-directory: aboutme
+
 jobs:
   test:
     runs-on: ubuntu-latest
-    container:
-      image: node:24.11.1-alpine3.22
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
 
       - name: Install dependencies
         run: npm ci
