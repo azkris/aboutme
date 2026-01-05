@@ -105,10 +105,16 @@ const SlideManager: React.FC = () => {
 			</div>
 
 			{/* Topic Title */}
-			<div className="p-12">
-				<h2 className="text-xl font-semibold text-white mt-4 opacity-90 text-center">
+			<div className="pt-12">
+				<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center">
+					Topic {topicIndex + 1} / {topics.length}
+				</p>
+				<h2 className="text-xl/4 font-semibold text-white mt-4 opacity-90 text-center m-0 p-0 line-ga">
 					{currentTopic.title}
 				</h2>
+				<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center">
+					Slide {slideIndex + 1} / {currentTopic.slides.length}
+				</p>
 
 				{/* Slide Content */}
 				<div className="relative grow flex justify-center items-center w-[800px] h-[400px]">
