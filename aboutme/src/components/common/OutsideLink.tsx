@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 
 // !Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.
 const fa_box_arrow = (
@@ -22,10 +21,10 @@ interface OutsideLinkProps {
 function OutsideLink(props: OutsideLinkProps) {
 	return (
 		<a
-			className="bg-transparent hover:bg-emerald-500 text-emerald-700 font-semibold hover:text-white py-2 px-4 border border-emerald-500 hover:border-transparent rounded"
+			className="bg-transparent hover:bg-emerald-600 text-emerald-600 font-semibold hover:text-white py-2 px-4 border border-emerald-600 hover:border-transparent rounded"
 			href={props.link}
 		>
-			<div className="flex gap-2">
+			<div className="flex flex-row gap-2">
 				<p>{props.title}</p>
 				<i className="items-end">{fa_box_arrow}</i>
 			</div>

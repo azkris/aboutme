@@ -1,6 +1,7 @@
 import AboutMeSlide from "./slides/AboutMe/AboutMe";
 import WelcomeSlide from "./slides/AboutMe/WelcomePage";
 import ExampleSlide1 from "./slides/Exampleslide1";
+import PfoAbout from "./slides/Projects/PortfolioSite/PfoAbout";
 
 // ----- Types -----
 export type SlideComponent = React.FC;
@@ -17,8 +18,8 @@ export const topics: Topic[] = [
 		slides: [WelcomeSlide, AboutMeSlide],
 	},
 	{
-		title: "Projects 1",
-		slides: [ExampleSlide1],
+		title: "Portfolio Site Project",
+		slides: [PfoAbout],
 	},
 	{
 		title: "Projects 2",
