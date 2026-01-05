@@ -1,5 +1,5 @@
-import SlideTemplate from "../../SlideTemplate";
-import OutsideLink from "../../../common/OutsideLink";
+import SlideTemplate from "../SlideTemplate";
+import OutsideLink from "../../common/OutsideLink";
 
 const PfoAbout = () => {
 	return (

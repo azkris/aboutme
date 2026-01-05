@@ -1,8 +1,8 @@
 import AboutMeSlide from "./slides/AboutMe/AboutMe";
 import WelcomeSlide from "./slides/AboutMe/WelcomePage";
 import ExampleSlide1 from "./slides/Exampleslide1";
-import CVAbout from "./slides/Projects/htmlCV/CVAbout";
-import PfoAbout from "./slides/Projects/PortfolioSite/PfoAbout";
+import CVAbout from "./slides/Projects/CVAbout";
+import PfoAbout from "./slides/Projects/PfoAbout";
 
 // ----- Types -----
 export type SlideComponent = React.FC;

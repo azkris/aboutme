@@ -1,5 +1,5 @@
-import SlideTemplate from "../../SlideTemplate";
-import OutsideLink from "../../../common/OutsideLink";
+import SlideTemplate from "../SlideTemplate";
+import OutsideLink from "../../common/OutsideLink";
 
 const CVAbout = () => {
 	return (
@@ -18,7 +18,7 @@ const CVAbout = () => {
 					Pages of the project (links below).
 				</p>
 				<br />
-				<div className="flex flex-col align-middle items-center m-auto gap-6">
+				<div className="flex flex-col align-middle items-center m-auto gap-4">
 					<OutsideLink
 						title="GitHub Repository"
 						link="https://github.com/azkris/html-cv"
