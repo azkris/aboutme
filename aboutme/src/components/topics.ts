@@ -1,6 +1,7 @@
 import AboutMeSlide from "./slides/AboutMe/AboutMe";
 import WelcomeSlide from "./slides/AboutMe/WelcomePage";
 import ExampleSlide1 from "./slides/Exampleslide1";
+import CVAbout from "./slides/Projects/htmlCV/CVAbout";
 import PfoAbout from "./slides/Projects/PortfolioSite/PfoAbout";
 
 // ----- Types -----
@@ -22,7 +23,7 @@ export const topics: Topic[] = [
 		slides: [PfoAbout],
 	},
 	{
-		title: "Projects 2",
-		slides: [ExampleSlide1],
+		title: "HTML CV Generator",
+		slides: [CVAbout],
 	},
 ];
