@@ -93,7 +93,7 @@ const SlideManager: React.FC = () => {
 	}, [handleKeyDown]);
 
 	return (
-		<div className="relative w-full h-full flex flex-col items-center justify-between bg-transparent rounded-xl overflow-hidden">
+		<div className="relative w-full h-full flex flex-col items-center justify-between bg-transparent rounded-xl overflow-auto">
 			{/* Top Edge Button (Prev Topic) */}
 			<div className="flex w-full justify-between absolute top-0">
 				<button
@@ -106,20 +106,20 @@ const SlideManager: React.FC = () => {
 
 			{/* Topic Title */}
 			<div className="pt-12">
-				<div className="">
-					<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center mb-6">
+				<div className="grid grid-cols-3">
+					<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center mb-0 flex-row-reverse">
 						Topic {topicIndex + 1} / {topics.length}
 					</p>
 					<h2 className="text-xl/4 font-semibold text-white mt-4 opacity-90 text-center m-0 p-0">
 						{currentTopic.title}
 					</h2>
-					<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center">
+					<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center flex-row items-start">
 						Slide {slideIndex + 1} / {currentTopic.slides.length}
 					</p>
 				</div>
 
 				{/* Slide Content */}
-				<div className="relative block grow justify-center items-center max-w-[80%] m-auto h-[80%px] overflow-auto rounded-3xl">
+				<div className="relative block grow justify-center items-center max-w-[80%] m-auto h-[80%px] rounded-3xl">
 					{/* Fixed panel area */}
 					<div className="w-full h-full overflow-hidden rounded-xl">
 						<AnimatePresence mode="wait" custom={direction}>
