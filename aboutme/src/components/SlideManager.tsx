@@ -161,7 +161,7 @@ const SlideManager: React.FC = () => {
 			</div>
 
 			{/* Bottom Edge Button (Next Topic) */}
-			<div className="flex w-full justify-between absolute bottom-0">
+			<div className="flex w-full justify-between relative bottom-0">
 				<button
 					onClick={nextTopic}
 					className="w-full h-12 text-white text-2xl transition-all duration-300 hover:bg-white/20 hover:border-t border-solid border-0 border-white/10 flex items-center justify-center"
