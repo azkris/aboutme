@@ -93,7 +93,7 @@ const SlideManager: React.FC = () => {
 	}, [handleKeyDown]);
 
 	return (
-		<div className="relative w-full h-full flex flex-col items-center justify-between bg-transparent rounded-xl overflow-hidden">
+		<div className="relative w-full h-full flex flex-col items-center justify-between bg-transparent rounded-xl overflow-auto">
 			{/* Top Edge Button (Prev Topic) */}
 			<div className="flex w-full justify-between absolute top-0">
 				<button
@@ -105,13 +105,21 @@ const SlideManager: React.FC = () => {
 			</div>
 
 			{/* Topic Title */}
-			<div className="p-12">
-				<h2 className="text-xl font-semibold text-white mt-4 opacity-90 text-center">
-					{currentTopic.title}
-				</h2>
+			<div className="pt-12">
+				<div className="grid grid-cols-3">
+					<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center mb-0 flex-row-reverse">
+						Topic {topicIndex + 1} / {topics.length}
+					</p>
+					<h2 className="text-xl/4 font-semibold text-white mt-4 opacity-90 text-center m-0 p-0">
+						{currentTopic.title}
+					</h2>
+					<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center flex-row items-start">
+						Slide {slideIndex + 1} / {currentTopic.slides.length}
+					</p>
+				</div>
 
 				{/* Slide Content */}
-				<div className="relative grow flex justify-center items-center w-[800px] h-[400px]">
+				<div className="relative block grow justify-center items-center max-w-[80%] m-auto h-[80%px] rounded-3xl">
 					{/* Fixed panel area */}
 					<div className="w-full h-full overflow-hidden rounded-xl">
 						<AnimatePresence mode="wait" custom={direction}>
@@ -153,7 +161,7 @@ const SlideManager: React.FC = () => {
 			</div>
 
 			{/* Bottom Edge Button (Next Topic) */}
-			<div className="flex w-full justify-between absolute bottom-0">
+			<div className="flex w-full justify-between relative bottom-0">
 				<button
 					onClick={nextTopic}
 					className="w-full h-12 text-white text-2xl transition-all duration-300 hover:bg-white/20 hover:border-t border-solid border-0 border-white/10 flex items-center justify-center"

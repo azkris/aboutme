@@ -9,7 +9,7 @@ const SlideTemplate = ({ children }: SlideTemplateProps) => {
 		<div
 			className="
         w-full h-full
-        overflow-hidden
+        overflow-auto
         flex flex-col items-center justify-center
         p-8
         text-white

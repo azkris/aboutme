@@ -1,4 +1,9 @@
-import ExampleSlide1 from "./slides/Exampleslide1";
+import AboutMeSlide from "./slides/AboutMe/AboutMe";
+import WelcomeSlide from "./slides/AboutMe/WelcomePage";
+import CVAbout from "./slides/Projects/CVAbout";
+import FlockTogetherAbout from "./slides/Projects/FlockTogetherSlide";
+import PfoAbout from "./slides/Projects/PfoAbout";
+import WaveSumAbout from "./slides/Projects/WaveSumAbout";
 
 // ----- Types -----
 export type SlideComponent = React.FC;
@@ -11,15 +16,23 @@ export interface Topic {
 // ----- Topic Definitions -----
 export const topics: Topic[] = [
 	{
-		title: "Personal Links",
-		slides: [ExampleSlide1, ExampleSlide1],
+		title: "AboutMe",
+		slides: [WelcomeSlide, AboutMeSlide],
 	},
 	{
-		title: "Projects 1",
-		slides: [ExampleSlide1],
+		title: "Portfolio Site Project",
+		slides: [PfoAbout],
 	},
 	{
-		title: "Projects 2",
-		slides: [ExampleSlide1],
+		title: "HTML CV Generator",
+		slides: [CVAbout],
+	},
+	{
+		title: "WaveSum Game",
+		slides: [WaveSumAbout],
+	},
+	{
+		title: "Flock Together Game",
+		slides: [FlockTogetherAbout],
 	},
 ];
