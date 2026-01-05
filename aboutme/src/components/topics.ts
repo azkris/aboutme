@@ -1,3 +1,4 @@
+import AboutMeSlide from "./slides/AboutMe/AboutMe";
 import WelcomeSlide from "./slides/AboutMe/WelcomePage";
 import ExampleSlide1 from "./slides/Exampleslide1";
 
@@ -13,7 +14,7 @@ export interface Topic {
 export const topics: Topic[] = [
 	{
 		title: "AboutMe",
-		slides: [WelcomeSlide, ExampleSlide1],
+		slides: [WelcomeSlide, AboutMeSlide],
 	},
 	{
 		title: "Projects 1",
