@@ -106,18 +106,20 @@ const SlideManager: React.FC = () => {
 
 			{/* Topic Title */}
 			<div className="pt-12">
-				<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center">
-					Topic {topicIndex + 1} / {topics.length}
-				</p>
-				<h2 className="text-xl/4 font-semibold text-white mt-4 opacity-90 text-center m-0 p-0 line-ga">
-					{currentTopic.title}
-				</h2>
-				<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center">
-					Slide {slideIndex + 1} / {currentTopic.slides.length}
-				</p>
+				<div className="">
+					<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center mb-6">
+						Topic {topicIndex + 1} / {topics.length}
+					</p>
+					<h2 className="text-xl/4 font-semibold text-white mt-4 opacity-90 text-center m-0 p-0">
+						{currentTopic.title}
+					</h2>
+					<p className="text-sm/1 font-semibold text-white mt-4 opacity-70 text-center">
+						Slide {slideIndex + 1} / {currentTopic.slides.length}
+					</p>
+				</div>
 
 				{/* Slide Content */}
-				<div className="relative grow flex justify-center items-center w-[800px] h-[400px]">
+				<div className="relative block grow justify-center items-center max-w-[80%] m-auto h-[80%px] overflow-auto rounded-3xl">
 					{/* Fixed panel area */}
 					<div className="w-full h-full overflow-hidden rounded-xl">
 						<AnimatePresence mode="wait" custom={direction}>
